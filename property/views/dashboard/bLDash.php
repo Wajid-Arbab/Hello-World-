@@ -119,11 +119,13 @@
 										?>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="featured-thumb hover-zoomer mb-4">
-                                            <div class="overlay-black overflow-hidden position-relative"><img style = "width:300px; height:300px;" src="/public/property/<?= $Row->Image?>" alt="pimage"></img>
-												<div class="featured bg-success text-white">New</div>
-                                                <div class="sale bg-success text-white text-capitalize"><?= $Row->SType?></div>
-                                                <div class="price text-primary"><b>$<?= $Row->Price?></b><span class="text-white"><?= $Row->AreaSize?> Sqft</span></div>
-                                            </div>
+											<a href = "/login">
+												<div class="overlay-black overflow-hidden position-relative"><img style = "width:300px; height:300px;" src="/public/property/<?= $Row->Image?>" alt="pimage"></img>
+													<div class="featured bg-success text-white">New</div>
+													<div class="sale bg-success text-white text-capitalize"><?= $Row->SType?></div>
+													<div class="price text-primary"><b>$<?= $Row->Price?></b><span class="text-white"><?= $Row->AreaSize?> Sqft</span></div>
+												</div>
+											</a>
                                             <div class="featured-thumb-data shadow-one">
                                                 <div class="p-3">
                                                     <h5 class="text-secondary hover-text-success mb-2 text-capitalize"><?= $Row->PTitle?></h5>
@@ -286,7 +288,7 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-md-6 col-lg-3 pb-1">
-                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="/public/images/thumbnail4/1.jpg" alt="">
+                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"><img src="/public/images/thumbnail4/1.jpg" alt="">
                                 <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
 									<?php 
 										if($popularPlaces->num_rows() > 0){
@@ -307,7 +309,7 @@
 							</div>
 						</div>	
                         <div class="col-md-6 col-lg-3 pb-1">
-                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <a href = ""><img src="/public/images/thumbnail4/2.jpg" alt="">
+                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"><img src="/public/images/thumbnail4/2.jpg" alt="">
                                 <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
 									<?php 
 										if($popularPlacesPlot1->num_rows() > 0){
