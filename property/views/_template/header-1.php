@@ -28,13 +28,11 @@
 <link rel="stylesheet" type="text/css" href="/public/fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 <link rel="stylesheet" type="text/css" href="/public/css/login.css">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Title
 	=========================================================-->
 <title>Online Market Place</title>
 </head>
 <body>
-
 <!--	Page Loader
 =============================================================
 <div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
@@ -107,7 +105,7 @@
 										
                                         <li class="nav-item"> <a class="nav-link" href="/dashboard/contact">Contact</a> </li>										
 										
-                                        <li class="nav-item"> <a class="nav-link" href="/dashboard/property">Properties</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/dashboard/applyFilter">Properties</a> </li>
                                         
                                         <li class="nav-item"> <a class="nav-link" href="/dashboard/agent">Agent</a> </li>
 										
@@ -122,6 +120,7 @@
 											<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
 											<ul class="dropdown-menu">
 												<li class="nav-item"> <a class="nav-link" href="/dashboard/profile">Profile</a> </li>
+												<li class="nav-item"> <a class="nav-link" href="/dashboard/feedback">feedback</a> </li>
 												<!-- <li class="nav-item"> <a class="nav-link" href="request.php">Property Request</a> </li> -->
 												<li class="nav-item"> <a class="nav-link" href="/dashboard/feature">Your Property</a> </li>
 												<li class="nav-item"> <a class="nav-link" href="/logout">Logout</a> </li>	

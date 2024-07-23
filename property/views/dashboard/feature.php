@@ -43,8 +43,8 @@
                         </thead>
                         <tbody>
 							<?php
-								if($RS->num_rows() > 0){
-									foreach($RS->result_object() as $Row){
+								if($userEnter_property->num_rows() > 0){
+									foreach($userEnter_property->result_object() as $Row){
 							?>
 						    <tr>
                                 <td>
@@ -69,7 +69,7 @@
 									}
 								}
 							?>
-                        </tbody>
+					    </tbody>
                     </table>            
             </div>
         </div>

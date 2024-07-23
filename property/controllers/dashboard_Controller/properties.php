@@ -110,17 +110,30 @@ class Properties extends CI_Controller{
 			
 			$this->load->model('user_model');
 			$alert = $this->user_model->properyInsertion($inputField);
-			if($alert){
-				$this->alert("Property Detail Registered Successfully");
-			}else{
-				$this->alert("Property Detail not Registered Successfully");
-			}
+			$this->feature();
+			// if($alert){
+				// $this->alert("Property Detail Registered Successfully");
+			// }else{
+				// $this->alert("Property Detail not Registered Successfully");
+			// }
 	}
 	
 	public function alert($msg){
 		$data["msg"] = $msg;
 		$this->load->view('_template/header-1');
 		$this->load->view('dashboard/submitproperty', $data);
+		$this->load->view('_template/footer-1');
+	}
+	
+	public function feature(){
+	   $this->load->model('user_model');
+	   $userEnter_property = $this->user_model->SelectLoginUserProperty();
+       $Data = array(
+			"userEnter_property" => $userEnter_property,
+	   );
+	   
+		$this->load->view('_template/header-1');
+		$this->load->view('dashboard/feature', $Data);
 		$this->load->view('_template/footer-1');
 	}
 } 

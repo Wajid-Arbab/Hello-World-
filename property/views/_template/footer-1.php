@@ -7,9 +7,8 @@
                                 <div class="col-md-12 col-lg-4">
                                     <div class="footer-widget mb-4">
                                         <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="/public/images/logo/restatelg_white.png" alt="image"></a> </div>
-                                        <p class="pb-20 text-white">Risus commodo congue augue phasellus morbi hymenaeos ante tincidunt eu orci dictum bibendum lacus platea primis mi lacinia felis gravida natoque bibendum cubilia montes tristique et arcu blandit risus. Lobortis dignissim nam.</p>
-										
-                                        </div>
+                                        <p class="pb-20 text-white">property_place...</p>
+									</div>
                                 </div>
                                 <div class="col-md-12 col-lg-8">
                                     <div class="row">
@@ -75,7 +74,7 @@
 
 <!--	Js Link
 ============================================================--> 
-<script src="/public/js/jquery.min.js"></script> 
+<script src="/public/js/jquery.min.js"></script>  
 <!--jQuery Layer Slider --> 
 <script src="/public/js/greensock.js"></script> 
 <script src="/public/js/layerslider.transitions.js"></script> 
@@ -84,17 +83,36 @@
 <script src="/public/js/tinymce/tinymce.min.js"></script>
 <script src="/public/js/tinymce/init-tinymce.min.js"></script>
 
-<script src="/public/js/popper.min.js"></script> 
-<script src="/public/js/bootstrap.min.js"></script> 
 <script src="/public/js/owl.carousel.min.js"></script> 
-<script src="/public/js/tmpl.js"></script> 
+
+<script src="/public/js/bootstrap.min.js"></script> 
+<script src="/public/js/popper.min.js"></script> 
+<script src="/public/js/jquery.cookie.js"></script>
 <script src="/public/js/jquery.dependClass-0.1.js"></script> 
 <script src="/public/js/draggable-0.1.js"></script> 
 <script src="/public/js/jquery.slider.js"></script> 
 <script src="/public/js/wow.js"></script> 
-<script src="/public/js/YouTubePopUp.jquery.js"></script> 
-<script src="/public/js/validate.js"></script> 
-<script src="/public/js/jquery.cookie.js"></script>
 <script src="/public/js/custom.js"></script>
+<script>
+	(function ($) {
+			/*
+		$("#property_type").on('change', function () {
+			this.form.submit();
+			var val = $(this).val(); //alert(val); okay
+			$.ajax({
+				url: "/dashboard/applyFilter",
+				type: "post",
+				data: 'request=' + val,
+				beforeSend:function(data){
+					$(".container").html("testing||working");
+				},
+				success:function(data){
+					$(".container").html(data);
+				},
+			});
+		});
+			*/
+	})(jQuery);
+	</script>  
 </body>
 </html>

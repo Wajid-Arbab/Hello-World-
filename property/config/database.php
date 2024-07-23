@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $DB_HOST = "localhost";
 $DB_NAME = "property_place";
 $DB_USER = "root";
-$DB_Password = "root";
+$DB_Password = "";
 
 $active_group = 'default';
 $query_builder = TRUE;

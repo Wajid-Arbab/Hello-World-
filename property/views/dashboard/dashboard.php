@@ -7,7 +7,7 @@
                         <div class="text-white">
                             <h1 class="mb-4"><span class="text-success">Let us</span><br>
                             Guide you Home</h1>
-                            <form method="post" action="/dashboard/propertygrid">
+                            <form method="get" action="/dashboard/applyFilter">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-2">
                                         <div class="form-group">
@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="city" placeholder="Enter City" required>
+                                            <input type="text" class="form-control" name="city" placeholder="Enter City">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-2">
@@ -64,28 +64,28 @@
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-rent text-success flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-success py-3 m-0"><a href="#">Selling Service</a></h5>
-                                <p>This is a dummy text for filling out spaces. Just some random words...</p>
+                                <p>we provide selling services of apartment, bulding, villa, house, office and flat...</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-for-rent text-success flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-success py-3 m-0"><a href="#">Rental Service</a></h5>
-                                <p>This is a dummy text for filling out spaces. Just some random words...</p>
+                                <p>we provide rental services of apartment, bulding, villa, house, office and flat...</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-list text-success flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-success py-3 m-0"><a href="#">Property Listing</a></h5>
-                                <p>This is a dummy text for filling out spaces. Just some random words...</p>
+                                <p>property listed according to your filter like flat or house, sale or rental and limit</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-diagram text-success flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-success py-3 m-0"><a href="#">Legal Investment</a></h5>
-                                <p>This is a dummy text for filling out spaces. Just some random words...</p>
+                                <p>our platform legally registered in country...</p>
                             </div>
                         </div>
                     </div>
@@ -173,21 +173,21 @@
 									<i class="flaticon-reward flat-medium float-left d-table mr-4 text-success" aria-hidden="true"></i>
 									<div class="pl-2">
 										<h5 class="mb-3">Top Rated</h5>
-										<p>This is a dummy text for filling out spaces. This is just a dummy text for filling out blank spaces.</p>
+										<p>Top rated property shown on website...</p>
 									</div>
                                 </li>
                                 <li class="mb-4 text-white d-flex"> 
 									<i class="flaticon-real-estate flat-medium float-left d-table mr-4 text-success" aria-hidden="true"></i>
 									<div class="pl-2">
 										<h5 class="mb-3">Experience Quality</h5>
-										<p>This is a dummy text for filling out spaces. This is just a dummy text for filling out blank spaces.</p>
+										<p>Featured property shown on the top of the list of the property...</p>
 									</div>
                                 </li>
                                 <li class="mb-4 text-white d-flex"> 
 									<i class="flaticon-seller flat-medium float-left d-table mr-4 text-success" aria-hidden="true"></i>
 									<div class="pl-2">
 										<h5 class="mb-3">Experienced Agents</h5>
-										<p>This is a dummy text for filling out spaces. This is just a dummy text for filling out blank spaces.</p>
+										<p>Agent 4 to 5 year Experience are hired...</p>
 									</div>
                                 </li>
                             </ul>
@@ -212,7 +212,7 @@
                             <div class="bg-success text-white rounded-circle position-absolute z-index-9">1</div>
                             <div class="left-arrow"><i class="flaticon-investor flat-medium icon-success" aria-hidden="true"></i></div>
                             <h5 class="text-secondary mt-5 mb-4">Discussion</h5>
-                            <p>Nascetur cubilia sociosqu aliquet ut elit nascetur nullam duis tincidunt nisl non quisque vestibulum platea ornare ridiculus.</p>
+                            <p>before uploading property information, first discuss property value, instrust rate and location...</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -220,7 +220,7 @@
                             <div class="bg-success text-white rounded-circle position-absolute z-index-9">2</div>
                             <div class="left-arrow"><i class="flaticon-search flat-medium icon-success" aria-hidden="true"></i></div>
                             <h5 class="text-secondary mt-5 mb-4">Files Review</h5>
-                            <p>Nascetur cubilia sociosqu aliquet ut elit nascetur nullam duis tincidunt nisl non quisque vestibulum platea ornare ridiculus.</p>
+                            <p>review our policy before submitting property detail...</p>
                         </div>
                     </div>
                     <div class="col-md-4">

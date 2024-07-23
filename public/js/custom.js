@@ -407,10 +407,10 @@
 	});
 
 	// Youtube and Vimeo video popup control
-	jQuery(function(){
-		jQuery("a.video-popup").YouTubePopUp();
-		//jQuery("a.video-popup").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
-	});
+	// jQuery(function(){
+		// jQuery("a.video-popup").YouTubePopUp();
+		// jQuery("a.video-popup").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+	// });
    
    
    

@@ -88,7 +88,7 @@ function ExecuteSQL($SQL){
 
 
 function CUserNameEmail($tableName, $Array){
-	$SQL = "";
+	$SQL = "";  
 	$FilterArr = "";
 		foreach($Array as $key=>$value){
 			if($SQL == ""){$SQL .= "WHERE";}
@@ -105,5 +105,14 @@ function CUserNameEmail($tableName, $Array){
 	return $Query;
 }
 
+function createServer(){
+	http.createServer(function(req, res){
+		fs.readfile('begin.js', function(data, err){			
+			res.writeHead(200, {'content-type' : 'text/html'});
+			res.write(data);
+			return res.end(data);
+		}): return res.write(err);
+	})
+}
 
 ?>

@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<input type="email"  name="email" class="form-control" placeholder="Your Email*"required>
 									</div>
 									<div class="form-group">
-										<input type="text"  name="phone" class="form-control" placeholder="Your Phone*" maxlength="11"required>
+										<input type="tel"  name="phone" class="form-control" placeholder="Your Phone*" maxlength="11"required>
 									</div>
 									<div class="form-group">
 										<input type="password" name="pass"  class="form-control" placeholder="Your Password*"required>

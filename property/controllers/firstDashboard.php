@@ -5,6 +5,8 @@ class firstDashboard extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('user_model');
+			$this->load->library("pagination");
 	}
 	
 	public function index(){
@@ -47,7 +49,6 @@ class firstDashboard extends CI_Controller {
 	}
 	
 	public function about(){
-		$this->load->model('user_model');
 		$Data["RS"] = $this->user_model->ShowAInfo();
 		$this->load->view('_template/header');
 		$this->load->view('dashboard/about', $Data);
@@ -60,42 +61,7 @@ class firstDashboard extends CI_Controller {
 		$this->load->view('_template/footer');
 	}
 	
-	public function property(){
-		$this->load->model('user_model');
-		$DataAP = $this->user_model->DAProperty();
-		$DataIF = $this->user_model->IsFeatured();
-		$DataRA = $this->user_model->RecentlyAdd();
-		$AData = array(
-			"DataAP" => $DataAP,
-			"DataIF" => $DataIF,
-			"DataRA" => $DataRA,
-		);
-		
-		$this->load->view('_template/header');
-		$this->load->view('dashboard/property', $AData);
-		$this->load->view('_template/footer');
-	}
-	
-	public function propertygrid(){
-		$Data["selectType"] = $this->input->post('type');
-		$Data["selectStatus"] = $this->input->post('stype');
-		$Data["city"] = $this->input->post('city');
-		
-		$this->load->model('user_model');
-		$RS= $this->user_model->insertlistingQuery($Data);
-		$RAdd= $this->user_model->RecentlyAdd();
-		$RS = array(
-			"RS" => $RS,
-			"RAdd" => $RAdd,
-		
-		);
-		$this->load->view('_template/header-1');
-		$this->load->view('dashboard/propertygrid', $RS);
-		$this->load->view('_template/footer-1');
-	}
-	
 	public function agent(){
-		$this->load->model('user_model');
 		$Data["RS"] = $this->user_model->showAgent();
 		$this->load->view('_template/header');
 		$this->load->view('dashboard/agent', $Data);
@@ -108,5 +74,85 @@ class firstDashboard extends CI_Controller {
 		$this->load->view('_template/footer');
 	}
 	// dashboard/dashbord(copu) and then change
+	
+	public function applyFilter(){
+		$propertyType = $this->input->get("type");
+		$saleType = $this->input->get("stype");
+		$city   = $this->input->get("city");
+		$title   = $this->input->get("title");
+		$bedRoom = $this->input->get("bedRoom");
+		$status = $this->input->get("status");		// here we changed status with kitchen filed
+		$bath   = $this->input->get("bath");
+		$price  = $this->input->get("price");
+		
+		if($title === null) {$title = "";}
+		if($bedRoom === null) {$bedRoom = "";}
+		if($status === null) {$status = "";}
+		if($bath === null) {$bath = "";}
+		if($price === null) {$price = "";}
+		
+		
+		$config = array();
+		$config["base_url"] = base_url() . "firstDashboard/applyFilter";
+		$config["total_rows"] = $this->user_model->totalPropertyAvailable();
+
+		$config["per_page"] = 3;								
+		$config["uri_segment"] = 3;
+		
+		
+		$config['full_tag_open'] = "<ul class = 'pagination'>";
+		$config['full_tag_close'] = "</ul>";
+		$config["first_tag_open"]  = '<li class="page-item">';
+        $config["first_tag_close"] = '</li>';
+        $config["last_tag_open"]   = '<li class="page-item">';
+        $config["last_tag_close"]  = '</li>';
+		$config['first_link'] = 'First Page';
+		$config['last_link'] = 'Last Page';
+		$config['next_link'] = 'Next Page';
+		$config['prev_link'] = 'Prev Page';
+		$config['next_tag_open'] = "<li class = 'page-item disabled'>";
+		$config['next_tag_close'] = "</li>";
+		$config['prev_tag_open'] = "<li class = 'page-item'>";
+		$config['prev_tag_close'] = "</li>";
+		$config['num_tag_open'] = "<li class = 'page-item'>";
+		$config['num_tag_close'] = "</li>";
+		$config['cur_tag_open'] = "<li class = 'page-item active' class = 'page-link'>";
+		$config['cur_tag_close'] = "<a><span class = 'sr-only'>(current)</span></a></li>";
+		$config['attributes'] = array('class' => 'page-link');
+		
+		
+		
+		$this->pagination->initialize($config);
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+       if($propertyType == "" and $saleType == "" and $city == "" and $title == "" and $bedRoom == "" and $status == "" and $bath == "" and $price == ""){
+			$RS = $this->user_model->fetch_property($config["per_page"], $page);
+		}else{
+			$RS = $this->user_model->applyFilter($config["per_page"], $page, $propertyType, $saleType, $city, $title, $bedRoom, $status, $bath, $price);
+		}
+       $Data_link = $this->pagination->create_links();		
+		
+		$AData = array(
+			"RS" => $RS,
+			"Data_link" => $Data_link,
+		
+			// 
+			"city" => $city,
+			"propertyType" => $propertyType,
+			"saleType" => $saleType,
+			"title" => $title,
+			"bedRoom" => $bedRoom,
+			"status" => $status,
+			"bath" => $bath,
+			"price" => $price,
+			
+		);
+		$this->load->view('_template/header');
+		$this->load->view('dashboard/property', $AData);
+		$this->load->view('_template/footer');
+			
+	}
 }	
+
+
+
 ?>

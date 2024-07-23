@@ -58,6 +58,8 @@ class User_model extends Common_model{
 	
 	public function properyInsertion($inputField){
 		$alert = $this->db->insert('property', $inputField);
+		print_r($alert);
+		die();
 		return $alert;
 	}
 	
@@ -77,6 +79,17 @@ class User_model extends Common_model{
 	public function FeedBackInsertion($inputField){
 		$alert = $this->db->insert('feedback', $inputField);
 		return $alert;
+	}
+	
+	public function FeedBackInsertion1($inputField){
+		$alert = $this->db->insert('feedback', $inputField);
+		return $alert;
+	}
+	
+	public function getData(){
+		$UserID = $this->getUserLoginID();
+		$SQL = "select * from feedback where `UserID` = '".$UserID."'";
+		return $this->CustomRS($SQL);
 	}
 	
 	public function DAProperty(){
@@ -124,7 +137,7 @@ class User_model extends Common_model{
 	}
 	
 	public function DRecentlyAdd(){
-		$SQL = "SELECT property.*, user.UserName,user.UserType,user.UserImage FROM `property`,`user` WHERE property.UserID=user.UserID ORDER BY date DESC LIMIT 6";
+		$SQL = "SELECT property.*, user.UserName,user.UserType,user.UserImage FROM `property`,`user` WHERE property.UserID=user.UserID ORDER BY date DESC LIMIT 6";		// also changed in this query
 		return $this->CustomRS($SQL);
 	}
 	
@@ -235,11 +248,30 @@ class User_model extends Common_model{
 	}
 	
 	public function insertlistingQuery($Data){
-		$sType =  $Data['selectType'];
-		$sStatus =  $Data['selectStatus'];
-		$city =  $Data['city'];
-		$SQL = "select property.*, user.UserName from property, user where property.UserID = user.UserID and PType = '".$sType."' and SType = '".$sStatus."' and City = '".$city."'";
-		return $this->CustomRS($SQL);
+		$propertyType =  $Data['selectType'];		//House
+		$propertyStatus =  $Data['selectStatus'];	// Sale
+		$city =  $Data['city'];		//Islamabad
+		
+		$SQL = "select p.*, u.UserName from property as p left join user as u on p.UserID = u.UserID ";
+		$filterQuery = "";
+		if($propertyType !== ""){
+			$filterQuery = " p.pType = '".$propertyType."'";
+		}
+		if($propertyStatus !== ""){
+			if ($filterQuery !== "") {$filterQuery .= " AND ";}
+			$filterQuery = " p.sType = '".$propertyStatus."'";
+		}
+		if($city !== ""){
+			if ($filterQuery !== "") {$filterQuery .= " AND ";}
+			$filterQuery = " p.City = '".$city."'";
+		}
+		
+		if($filterQuery !== ""){
+			$filterQuery = " Where".$filterQuery;
+		}
+		$SQL .= $filterQuery;
+		
+		return $this->CustomRS($SQL);	
 	}
 	
 	public function fetchthroughPropertyID($PropertyID){
@@ -427,6 +459,91 @@ class User_model extends Common_model{
 		$SQL = "select * from`user` where `UserID` = '".$ID."'";
 		return $this->CustomRS($SQL);
 	}
+	
+	public function fetch_property($limit, $start) {	
+	   $this->db->limit($limit, $start);															//		0 3			3	3
+	   //$SQL = "select p.*, u.UserName from property as p left join user as u on p.UserID = u.UserID LIMIT ".$start.", ".$limit."";
+	   $SQL = "select p.*, u.UserName from property as p left join user as u on p.UserID = u.UserID WHERE p.Status = 'available' LIMIT ".$start.", ".$limit."";		// if user go directly on property page then this query work perfectly
+	   return $this->CustomRS($SQL);
+       /*
+	   $query = $this->db->get("property");
+       if ($query->num_rows() > 0) {
+           foreach ($query->result() as $row) {
+               $data[] = $row;
+           }
+           return $data;
+       }
+       return false;
+	   */
+	}
+	
+	public function likeQuery($search){
+		$SQL = "select p.*, u.UserName from property as p left join user as u on p.UserID = u.UserID where PTitle like '%".$search."%'";
+		return $this->CustomRS($SQL);
+	}
+	
+	public function applyFilter($limit, $start, $propertyType, $saleType, $city, $title, $bedRoom, $status, $bath, $price){
+		$this->db->limit($limit, $start);
+		$SQL = "select p.*, u.UserName from property as p left join user as u on p.UserID = u.UserID";
+		$filter = "";
+
+		$propertyStatus = "available";
+		
+		if($propertyType !== ""){
+			$filter .= " p.pType = '".$propertyType."'";
+		}
+		if($saleType !== ""){	
+			if ($filter !== "") {$filter .= " AND ";}
+		    $filter .= " p.sType = '".$saleType."'";
+		}
+		if($city !== ""){	
+			if($filter !== ""){$filter .= " And ";}
+		    $filter .= " p.city = '".$city."'";
+		}
+		
+		if($title !== ""){	
+			if($filter !== ""){$filter .= " And ";}
+		    $filter .= " p.PTitle = '".$title."'";
+		}
+		
+		if($bedRoom !== ""){	
+			if($filter !== ""){$filter .= " And ";}
+		    $filter .= " p.bedRoom = '".$bedRoom."'";
+		}
+		
+		if($status !== ""){	
+			if($filter !== ""){$filter .= " And ";}
+		    $filter .= " p.status = '".$status."'";
+		}
+		
+		if($bath !== ""){	
+			if($filter !== ""){$filter .= " And ";}
+		    $filter .= " p.BathRoom = '".$bath."'";
+		}
+		
+		if($price !== ""){	
+			if($filter !== ""){$filter .= " And ";}
+		    $filter .= " p.price = '".$price."'";
+		}
+
+		if($filter !== ""){
+			$filter .= " And ";
+			$filter .= "p.Status = '".$propertyStatus."'";
+		}
+
+		if($filter !== ""){
+			$filter .= " Limit ";
+			$filter .= $start .", ". $limit;
+		}	
+		
+		if($filter !== ""){
+			$filter = " Where".$filter;
+		}
+		
+		$SQL .= $filter;
+		return $this->CustomRS($SQL);
+	}
+	// onchange="this.form.action += '?workno='+this.value; this.form.submit()";
 }
 
 ?>

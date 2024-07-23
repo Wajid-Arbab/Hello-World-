@@ -179,7 +179,7 @@
 									foreach($DataIF->result_object() as $Row){				
 							?>
                             <li> <img src="/public/property/<?= $Row->Image?>" alt="pimage">
-                                <h6 class="text-secondary hover-text-success text-capitalize"><a href="/dashboard/property/<?= $Row->PropertyID?>"><?= $Row->PTitle?></a></h6>
+                                <h6 class="text-secondary hover-text-success text-capitalize"><a href="/dashboard/propertydetail/<?= $Row->PropertyID?>"><?= $Row->PTitle?></a></h6>
                                 <span class="font-14"><i class="fas fa-map-marker-alt icon-success icon-small"></i> <?= $Row->Adress?></span>
                                 
                             </li>

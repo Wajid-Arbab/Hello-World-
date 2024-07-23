@@ -7,7 +7,7 @@
                                 <div class="col-md-12 col-lg-4">
                                     <div class="footer-widget mb-4">
                                         <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="/public/images/logo/restatelg_white.png" alt="image"></a> </div>
-                                        <p class="pb-20 text-white">Risus commodo congue augue phasellus morbi hymenaeos ante tincidunt eu orci dictum bibendum lacus platea primis mi lacinia felis gravida natoque bibendum cubilia montes tristique et arcu blandit risus. Lobortis dignissim nam.</p>
+                                        <p class="pb-20 text-white">Property_place...</p>
 										
                                         </div>
                                 </div>
@@ -90,5 +90,27 @@
 <script src="/public/js/jquery.slider.js"></script> 
 <script src="/public/js/wow.js"></script> 
 <script src="/public/js/custom.js"></script>
+
+<!-- Datatables JS -->
+<script src="/public/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/public/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/public/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="/public/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+<script src="/public/assets/plugins/datatables/dataTables.select.min.js"></script>
+
+<script src="/public/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="/public/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="/public/assets/plugins/datatables/buttons.html5.min.js"></script>
+<script src="/public/assets/plugins/datatables/buttons.flash.min.js"></script>
+<script src="/public/assets/plugins/datatables/buttons.print.min.js"></script>
+
+	  <!-- Vendor JS Files -->
+<script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/public/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/public/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/public/assets/js/main.js"></script>
 </body>
 </html>

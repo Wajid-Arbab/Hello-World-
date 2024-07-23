@@ -1,6 +1,6 @@
 <?php
 class Common_model extends CI_Model{
-		public function GetTotalRecords($SQL){
+	public function GetTotalRecords($SQL){
 		if($SQL == ""){exit;}
 		$RS = $this->db->query($SQL);
 		$Total = $RS->row_object()->Total;

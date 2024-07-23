@@ -15,6 +15,9 @@
 	========================================================-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
 
 <!--	Css Link
 	========================================================-->
@@ -28,9 +31,17 @@
 <link rel="stylesheet" type="text/css" href="/public/fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 <link rel="stylesheet" type="text/css" href="/public/css/login.css">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
+			
+<!-- Datatables CSS -->
+<link rel="stylesheet" href="/public/assets/plugins/datatables/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="/public/assets/plugins/datatables/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="/public/assets/plugins/datatables/select.bootstrap4.min.css">
+<link rel="stylesheet" href="/public/assets/plugins/datatables/buttons.bootstrap4.min.css">
+
+  <link href="assets/css/style.css" rel="stylesheet">
 <!--	Title
 	=========================================================-->
+
 <title>Online Market Place</title>
 </head>
 <body>
@@ -49,29 +60,6 @@
 
 <div id="page-wrapper">
     <div class="row"> 
-        <!--	Header start  -->
-       
-        <!--	Header end  -->
-        
-        <!--	Banner   --->
-        <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Login</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Login</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
 
 <header id="header" class="transparent-header-modern fixed-header-bg-white w-100">
             <div class="top-header bg-secondary">
@@ -114,24 +102,9 @@
 										
                                         <li class="nav-item"> <a class="nav-link" href="/firstDashboard/contact">Contact</a> </li>										
 										
-                                        <li class="nav-item"> <a class="nav-link" href="/firstDashboard/property">Properties</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/firstDashboard/applyFilter">Properties</a> </li>
                                         
                                         <li class="nav-item"> <a class="nav-link" href="/firstDashboard/agent">Agent</a> </li>
-										
-										<?php  if(isset($_SESSION['uemail']))
-										{ ?>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
-											<ul class="dropdown-menu">
-												<li class="nav-item"> <a class="nav-link" href="#">Profile</a> </li>
-												<!-- <li class="nav-item"> <a class="nav-link" href="request.php">Property Request</a> </li> -->
-												<li class="nav-item"> <a class="nav-link" href="#">Your Property</a> </li>
-												<li class="nav-item"> <a class="nav-link" href="#">Logout</a> </li>	
-											</ul>
-                                        </li>
-										<?php } else { ?>
-										<li class="nav-item"> <a class="nav-link" href="/login">Login/Register</a> </li>
-										<?php } ?>
 										
                                     </ul>
                                     
@@ -144,3 +117,5 @@
                 </div>
             </div>
         </header>
+		
+		

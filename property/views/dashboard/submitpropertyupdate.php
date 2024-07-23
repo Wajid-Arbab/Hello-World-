@@ -40,13 +40,12 @@
 													<label class="col-lg-3 col-form-label">Property Type</label>
 													<div class="col-lg-9">
 														<select class="form-control"  name="ptype">
-															<option value=""><?= $Row->PType?></option>
-															<option value="apartment">Apartment</option>
-															<option value="flat">Flat</option>
-															<option value="building">Building</option>
-															<option value="house">House</option>
-															<option value="villa">Villa</option>
-															<option value="office">Office</option>
+															<option value="apartment" <?php echo($Row->PType === "apartment") ? "selected = 'selected'" : "";?>>Apartment</option>
+															<option value="flat" <?php echo($Row->PType === "flat") ? "selected = 'selected'" : "";?>>Flat</option>
+															<option value="building" <?php echo($Row->PType === "building") ? "selected = 'selected'" : "";?>>Building</option>
+															<option value="house" <?php echo($Row->PType === "house") ? "selected = 'selected'" : "";?>>House</option>
+															<option value="villa" <?php echo($Row->PType === "villa") ? "selected = 'selected'" : "";?>>Villa</option>
+															<option value="office" <?php echo($Row->PType === "office") ? "selected = 'selected'" : "";?>>Office</option>
 														</select>
 													</div>
 												</div>
@@ -54,22 +53,21 @@
 													<label class="col-lg-3 col-form-label">Selling Type</label>
 													<div class="col-lg-9">
 														<select class="form-control"  name="stype">
-															<option value=""><?= $Row->SType?></option>
-															<option value="rent">Rent</option>
-															<option value="sale">Sale</option>
+															<option value="rent" <?php echo($Row->SType === "rent") ? "selected = 'selected'" : "";?>>Rent</option>
+															<option value="sale" <?php echo($Row->SType === "sale") ? "selected = 'selected'" : "";?>>Sale</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Bathroom</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="bath"  value="BathRoom">
+														<input type="text" class="form-control" name="bath"  value="<?php echo $Row->BathRoom?>">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Kitchen</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="kitc"  value="Kitchen">
+														<input type="text" class="form-control" name="kitc"  value="<?php echo $Row->Kitchen?>">
 													</div>
 												</div>
 												
@@ -79,15 +77,11 @@
 													<label class="col-lg-3 col-form-label">BHK</label>
 													<div class="col-lg-9">
 														<select class="form-control"  name="bhk">
-															<option value=""><?= $Row->BHK?></option>
-															<option value="1 BHK">1 BHK</option>
-															<option value="2 BHK">2 BHK</option>
-															<option value="3 BHK">3 BHK</option>
-															<option value="4 BHK">4 BHK</option>
-															<option value="5 BHK">5 BHK</option>
-															<option value="1,2 BHK">1,2 BHK</option>
-															<option value="2,3 BHK">2,3 BHK</option>
-															<option value="2,3,4 BHK">2,3,4 BHK</option>
+															<option value="1" <?php echo($Row->BHK === "1") ? "selected = 'selected'" : "";?>>1 BHK</option>
+															<option value="2" <?php echo($Row->BHK === "2") ? "selected = 'selected'" : "";?>>2 BHK</option>
+															<option value="3" <?php echo($Row->BHK === "3") ? "selected = 'selected'" : "";?>>3 BHK</option>
+															<option value="4" <?php echo($Row->BHK === "4") ? "selected = 'selected'" : "";?>>4 BHK</option>
+															<option value="5" <?php echo($Row->BHK === "5") ? "selected = 'selected'" : "";?>>5 BHK</option>
 														</select>
 													</div>
 												</div>
@@ -119,12 +113,11 @@
 													<label class="col-lg-3 col-form-label">Floor</label>
 													<div class="col-lg-9">
 														<select class="form-control"  name="floor">
-															<option value=""><?= $Row->Floor?></option>
-															<option value="1st Floor">1st Floor</option>
-															<option value="2nd Floor">2nd Floor</option>
-															<option value="3rd Floor">3rd Floor</option>
-															<option value="4th Floor">4th Floor</option>
-															<option value="5th Floor">5th Floor</option>
+															<option value="1st Floor" <?php echo($Row->Floor === "1st Floor") ? "selected = 'selected'" : "";?>>1st Floor</option>
+															<option value="2nd Floor" <?php echo($Row->Floor === "2nd Floor") ? "selected = 'selected'" : "";?>>2nd Floor</option>
+															<option value="3rd Floor" <?php echo($Row->Floor === "3rd Floor") ? "selected = 'selected'" : "";?>>3rd Floor</option>
+															<option value="4th Floor" <?php echo($Row->Floor === "4th Floor") ? "selected = 'selected'" : "";?>>4th Floor</option>
+															<option value="5th Floor" <?php echo($Row->Floor === "5th Floor") ? "selected = 'selected'" : "";?>>5th Floor</option>
 														</select>
 													</div>
 												</div>
@@ -152,22 +145,15 @@
 													<label class="col-lg-3 col-form-label">Total Floor</label>
 													<div class="col-lg-9">
 														<select class="form-control"  name="totalfl">
-															<option value=""><?= $Row->TFloor?></option>
-															<option value="1 Floor">1 Floor</option>
-															<option value="2 Floor">2 Floor</option>
-															<option value="3 Floor">3 Floor</option>
-															<option value="4 Floor">4 Floor</option>
-															<option value="5 Floor">5 Floor</option>
-															<option value="6 Floor">6 Floor</option>
-															<option value="7 Floor">7 Floor</option>
-															<option value="8 Floor">8 Floor</option>
-															<option value="9 Floor">9 Floor</option>
-															<option value="10 Floor">10 Floor</option>
-															<option value="11 Floor">11 Floor</option>
-															<option value="12 Floor">12 Floor</option>
-															<option value="13 Floor">13 Floor</option>
-															<option value="14 Floor">14 Floor</option>
-															<option value="15 Floor">15 Floor</option>
+															<option value="1 " <?php echo($Row->TFloor === "1") ? "selected = 'selected'" : "";?>>1st Floor</option>
+															<option value="2 " <?php echo($Row->TFloor === "2") ? "selected = 'selected'" : "";?>>2nd Floor</option>
+															<option value="3 " <?php echo($Row->TFloor === "3") ? "selected = 'selected'" : "";?>>3rd Floor</option>
+															<option value="4 " <?php echo($Row->TFloor === "4") ? "selected = 'selected'" : "";?>>4th Floor</option>
+															<option value="5 " <?php echo($Row->TFloor === "5") ? "selected = 'selected'" : "";?>>5th Floor</option>
+															<option value="6 " <?php echo($Row->TFloor === "6") ? "selected = 'selected'" : "";?>>6th Floor</option>
+															<option value="7 " <?php echo($Row->TFloor === "7") ? "selected = 'selected'" : "";?>>7th Floor</option>
+															<option value="8 " <?php echo($Row->TFloor === "8") ? "selected = 'selected'" : "";?>>8th Floor</option>
+															<option value="9 " <?php echo($Row->TFloor === "9") ? "selected = 'selected'" : "";?>>9th Floor</option>
 														</select>
 													</div>
 												</div>
@@ -229,9 +215,8 @@
 													<label class="col-lg-3 col-form-label">Status</label>
 													<div class="col-lg-9">
 														<select class="form-control"   name="status">
-															<option value=""><?= $Row->Status;?></option>
-															<option value="available">Available</option>
-															<option value="sold out">Sold Out</option>
+															<option value="available" <?php echo($Row->Status === "available") ? "selected = 'selected'" : "";?>>Available</option>
+															<option value="sold out" <?php echo($Row->Status === "sold out") ? "selected = 'selected'" : "";?>>Sold Out</option>
 														</select>
 													</div>
 												</div>
@@ -285,18 +270,8 @@
 													<label class="col-lg-3 col-form-label"><b>Is Featured?</b></label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="isFeatured">
-															<option value="">
-																<?php 
-																	$isFeatured = $Row->IsFeatured; 
-																	if($isFeatured == 1){
-																		echo $isFeatured = 'yes';																		
-																	}else{
-																		echo $isFeatured = 'No';																		
-																	}
-																?>
-															</option>
-															<option value="0">No</option>
-															<option value="1">Yes</option>
+															<option value="0" <?php echo ($Row->IsFeatured === "0") ? "selected='selected'" : "";?>>No</option>
+															<option value="1" <?php echo ($Row->IsFeatured === "1") ? "selected='selected'" : "";?>>Yes</option>
 														</select>
 													</div>
 												</div>

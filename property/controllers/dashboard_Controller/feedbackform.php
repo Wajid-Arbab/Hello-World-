@@ -22,7 +22,6 @@ class Feedbackform extends CI_Controller{
 		$inputField = array(
 			'UserID'	=>  $UserID,
 			'FDescription' => $Content, 
-			'Status'	=>  '0'
 		);
 	
 		$this->load->model('user_model');
@@ -30,13 +29,26 @@ class Feedbackform extends CI_Controller{
 		if($status){
 			$this->view();
 		}
-		
 	}
 	
 	public function view(){
-		$this->load->view('_template/header-1');	
-		$this->load->view('dashboard/dashboard');
+		$Data["RS"] = $this->user_model->getData();
+
+		$this->load->view('_template/header-1');
+		$this->load->view('dashboard/feedback', $Data);
 		$this->load->view('_template/footer-1');
+	}
+	
+	public function getFeedback(){
+		$ci = &get_instance();
+		$UserID = $ci->session->userdata('UserID');
+		
+		
+		$this->load->model('user_model');
+		$ActiveUser = $this->user_model->getData($UserID);
+		if($ActiveUser){
+			die("ok");
+		}
 	}
 }
 
